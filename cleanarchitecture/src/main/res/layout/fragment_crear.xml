@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nombre"
-            android:maxLength="6"
             android:inputType="textCapCharacters" />
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
@@ -27,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/telefono"
-            android:maxLength="6"
             android:inputType="textCapCharacters" />
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
@@ -39,7 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/correo"
-            android:maxLength="6"
             android:inputType="textCapCharacters" />
     </android.support.design.widget.TextInputLayout>
     <Button
@@ -47,6 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/crear"
-        android:onClick="crearClicked"/>
+        android:id="@+id/bCrear"/>
 
 </LinearLayout>

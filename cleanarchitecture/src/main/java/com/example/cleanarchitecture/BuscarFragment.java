@@ -1,13 +1,17 @@
 package com.example.cleanarchitecture;
 
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -17,6 +21,10 @@ public class BuscarFragment extends Fragment {
 
     EditText eNombre;
     TextView tNombre, tTelefono, tCorreo;
+    Button bBuscar;
+
+   /* ContactosSQLiteHelper contactosSQLiteHelper;
+    SQLiteDatabase dbContactos;*/
 
     public BuscarFragment() {
         // Required empty public constructor
@@ -33,7 +41,26 @@ public class BuscarFragment extends Fragment {
         tNombre = view.findViewById(R.id.tNombre);
         tTelefono = view.findViewById(R.id.tTelefono);
         tCorreo = view.findViewById(R.id.tCorreo);
+        bBuscar = view.findViewById(R.id.bBuscar);
 
+        /*contactosSQLiteHelper = new ContactosSQLiteHelper(getActivity(),"Agenda",null,1);
+        dbContactos = contactosSQLiteHelper.getWritableDatabase();
+
+        bBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor cursor = dbContactos.rawQuery("SELECT * FROM contactos " +
+                "WHERE nombre = '"+eNombre.getText().toString()+"' ",null);
+
+                if(cursor.moveToFirst()){
+                    tNombre.setText(cursor.getString(1));
+                    tTelefono.setText(cursor.getString(2));
+                    tCorreo.setText(cursor.getString(3));
+                }else{
+                    Toast.makeText(getActivity(),"No existe",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });*/
 
         return view;
     }

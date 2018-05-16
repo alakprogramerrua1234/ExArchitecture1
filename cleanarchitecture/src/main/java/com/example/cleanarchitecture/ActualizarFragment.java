@@ -1,11 +1,14 @@
 package com.example.cleanarchitecture;
 
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 
@@ -15,6 +18,9 @@ import android.widget.EditText;
 public class ActualizarFragment extends Fragment {
 
     private EditText eNombre, eTelefono, eCorreo;
+    private Button bActualizar;
+   /* ContactosSQLiteHelper contactosSQLiteHelper;
+    SQLiteDatabase dbContactos;*/
 
     public ActualizarFragment() {
         // Required empty public constructor
@@ -29,6 +35,30 @@ public class ActualizarFragment extends Fragment {
         eNombre = view.findViewById(R.id.eNombre);
         eTelefono = view.findViewById(R.id.eTelefono);
         eCorreo = view.findViewById(R.id.eCorreo);
+        bActualizar = view.findViewById(R.id.bActualizar);
+
+        /*contactosSQLiteHelper = new ContactosSQLiteHelper(getActivity(),"Agenda",null,1);
+        dbContactos = contactosSQLiteHelper.getWritableDatabase();
+
+        ContentValues dataDB = new ContentValues();
+
+        dataDB.put("telefono", eTelefono.getText().toString());
+        dataDB.put("correo", eCorreo.getText().toString());
+
+        dbContactos.update("contactos",dataDB,"nombre='"+eNombre.getText().toString()+"'",null);
+
+        bActualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentValues dataBD = new ContentValues();
+
+                dataBD.put("telefono", eTelefono.getText().toString());
+                dataBD.put("correo", eCorreo.getText().toString());
+
+                dbContactos.update("contactos",dataBD,"nombre='"+eNombre.getText().toString()+"'",null);
+            }
+
+        });*/
 
         return view;
     }
